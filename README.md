@@ -5,7 +5,7 @@
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!-- Add Colab badge once a notebook exists -->
-<!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/se3-diff-fold/blob/main/notebooks/Demo.ipynb) -->
+<!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Gifted87/se3-diff-fold/blob/main/notebooks/Demo.ipynb) -->
 
 <!-- Placeholder for a cool diffusion GIF -->
 <!-- ![Diffusion Process](docs/diffusion.gif) -->
@@ -70,7 +70,7 @@ Performance needs to be evaluated on standard benchmarks like CASP or CAMEO test
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/se3-diff-fold.git # Replace with your repo URL
+git clone https://github.com/Gifted87/se3-diff-fold.git # Replace with your repo URL
 cd se3-diff-fold
 
 # Create Conda environment
