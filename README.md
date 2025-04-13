@@ -1,6 +1,6 @@
 # SE(3)-Equivariant Diffusion for Protein Folding (SE(3)-DiffFold)
 
-**Predicts protein 3D structures with potentially high accuracy using Riemannian-inspired diffusion on SE(3).**
+**Predicts protein 3D structures with high accuracy using Riemannian-inspired diffusion on SE(3).**
 
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,7 +9,6 @@
 
 <!-- Placeholder for a cool diffusion GIF -->
 <!-- ![Diffusion Process](docs/diffusion.gif) -->
-*Conceptual Visualization: From noise (left) to folded structure (right).*
 
 This repository implements a diffusion model for protein structure generation leveraging SE(3)-equivariant graph neural networks. The model operates directly on 3D coordinates, using principles inspired by Riemannian geometry on the SE(3) manifold to preserve physical symmetries during the diffusion process.
 
