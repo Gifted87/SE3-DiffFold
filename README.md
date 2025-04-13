@@ -180,17 +180,6 @@ python tests/test_equivariance.py
 *   Optimize inference speed (model distillation, ONNX export).
 *   Benchmark rigorously against CASP/CAMEO datasets and other generative models.
 
-```bibtex
-@misc{se3diffold_placeholder,
-  author = {Gift Braimah},
-  title = {{SE(3)-Equivariant Diffusion for Protein Folding}},
-  year = {2025},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/Gifted87/se3-diff-fold}}
-}
-```
-
 ## License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
