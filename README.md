@@ -193,7 +193,7 @@ If you find this work useful, please consider citing the relevant papers for MoE
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/Gifted87/SE3-DiffFold}},
 }
-
+```
 
 ## License
 
