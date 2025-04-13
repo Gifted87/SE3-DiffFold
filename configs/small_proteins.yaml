@@ -1,0 +1,45 @@
+
+# Model Configuration
+model:
+  _target_: models.score_network.ScoreNetwork # Target class for instantiation (using hydra-style notation)
+  node_input_dim: 21 # N_RESIDUE_TYPES + 1 for UNK? Make sure consistent with preprocess.py (it was 21)
+  hidden_dim: 128
+  num_layers: 6 # Slightly deeper for potentially complex folds
+  time_embed_dim: 64
+  radius: 12.0 # Interaction radius in Angstroms
+  dropout: 0.1
+
+# Diffusion Configuration
+diffusion:
+  _target_: models.diffusion.SE3Diffusion
+  num_timesteps: 1000
+  beta_start: 1.0e-4
+  beta_end: 0.025 # Slightly higher end beta might help
+  schedule_type: "cosine" # Cosine schedule often performs well
+
+# Training Configuration
+training:
+  seed: 42
+  epochs: 500 # Number of training epochs
+  batch_size: 16 # Adjust based on GPU memory
+  learning_rate: 1.5e-4
+  optimizer: "AdamW" # AdamW is common for transformers/GNNs
+  weight_decay: 0.01
+  # Gradient clipping helps stabilize training
+  gradient_clip_val: 1.0
+  # Add learning rate scheduler? e.g., linear warmup cosine decay
+  scheduler:
+    use: True
+    warmup_epochs: 20
+    # Other scheduler params if needed
+
+# Data Configuration
+data:
+  dataset_path: "data/processed_small/" # Path to preprocessed graphs for small proteins
+  num_workers: 4 # Dataloader workers
+
+# Logging/Checkpointing
+logging:
+  log_dir: "logs/small_proteins/"
+  checkpoint_dir: "checkpoints/small_proteins/"
+  save_interval: 50 # Save checkpoint every N epochs

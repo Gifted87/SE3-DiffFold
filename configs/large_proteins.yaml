@@ -1,0 +1,42 @@
+
+# Model Configuration
+model:
+  _target_: models.score_network.ScoreNetwork
+  node_input_dim: 21
+  hidden_dim: 192 # Slightly larger hidden dim for capacity
+  num_layers: 8 # Deeper model
+  time_embed_dim: 64
+  radius: 15.0 # Larger radius might be needed
+  dropout: 0.15 # Increase dropout slightly for deeper model
+
+# Diffusion Configuration
+diffusion:
+  _target_: models.diffusion.SE3Diffusion
+  num_timesteps: 1000
+  beta_start: 1.0e-4
+  beta_end: 0.02 # Keep standard beta end
+  schedule_type: "cosine"
+
+# Training Configuration
+training:
+  seed: 42
+  epochs: 800 # Train longer potentially
+  batch_size: 4 # Reduce batch size due to larger graphs and model size
+  learning_rate: 1.0e-4 # Potentially smaller LR for larger model
+  optimizer: "AdamW"
+  weight_decay: 0.01
+  gradient_clip_val: 1.0
+  scheduler:
+    use: True
+    warmup_epochs: 30
+
+# Data Configuration
+data:
+  dataset_path: "data/processed_large/" # Different path for large protein graphs
+  num_workers: 2 # Fewer workers if memory is tight
+
+# Logging/Checkpointing
+logging:
+  log_dir: "logs/large_proteins/"
+  checkpoint_dir: "checkpoints/large_proteins/"
+  save_interval: 50
